@@ -14,11 +14,16 @@
     }
 
     .tulisan-sekolah {
-        margin-left: 20%;
-        margin-top: -16%;
+        margin-left: 18%;
+        margin-top: -12%;
     }
+
     .link-button {
         margin-left: 2%;
+    }
+
+    .button-margin {
+        margin-top: 8%;
     }
 
     .foto-kalimat-pembuka {
@@ -87,6 +92,10 @@
         margin-left: 2%;
     }
 
+    .button-margin {
+        margin-top: 12%;
+    }
+
     .foto-kalimat-pembuka {
         height: 200px; 
         width: 200px; 
@@ -135,21 +144,21 @@
 /* HP */
 @media only screen and (max-width: 767px){
 
-    .fakeImg {
+   .fakeImg {
         height: 200px; 
         width: 200px; 
         background-color: lightgray;
         margin-top: 10px; 
         border-radius: 50%;
-        margin-left: 20%;
+        margin-left: 23%;
     }
-
     .tulisan-sekolah {
+        margin-top: 20px;
         text-align: center;
-    }
+    } 
 
     .link-button {
-        margin-left: 0%;
+        margin-left: 2%;
     }
 
     .foto-kalimat-pembuka {
@@ -159,6 +168,10 @@
         margin-top: 10px; 
         margin-left: 10%; 
         margin-top: 3%;
+    }
+
+    .button-margin {
+        margin-top: 8%;
     }
 
     .kalimat-pembuka {
