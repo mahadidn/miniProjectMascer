@@ -1,0 +1,66 @@
+.link-button {
+    margin-left: 2%;
+}
+
+@media only screen and (min-width: 1024px){
+    .logo-foto-sekolah {
+        height: 200px; 
+        width: 200px; 
+        background-color: lightgray;
+        margin-top: 10px; 
+        border-radius: 50%;
+    }
+
+    .button-margin {
+        margin-top: 8%;
+    }
+    
+    .link-sosmed {
+        margin-left: 500%;
+    }
+    .tulisan-sekolah {
+        margin-left: 18%;
+        margin-top: -12%;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .tulisan-sekolah{
+            margin-left: 32%;
+            margin-top: -24%;
+        }
+        .logo-foto-sekolah {
+            height: 200px; 
+            width: 200px; 
+            background-color: lightgray;
+            margin-top: 10px; 
+            border-radius: 50%;
+        }
+
+        .button-margin {
+            margin-top: 12%;
+        }
+
+}
+
+/* HP */
+@media only screen and (max-width: 767px){
+    .logo-foto-sekolah {
+        height: 200px; 
+        width: 200px; 
+        background-color: lightgray;
+        margin-top: 10px; 
+        border-radius: 50%;
+        margin-left: 23%;
+    }
+    .tulisan-sekolah {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .button-margin {
+        margin-top: 8%;
+    }
+
+}

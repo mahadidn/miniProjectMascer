@@ -1,0 +1,259 @@
+
+
+
+/* laptop */
+@media only screen and (min-width: 1024px){
+    .link-sosmed {
+        margin-left: 500%;
+    }
+    .fakeImg {
+        height: 200px; 
+        width: 200px; 
+        background-color: lightgray;
+        margin-top: 10px; 
+        border-radius: 50%;
+    }
+
+    .tulisan-sekolah {
+        margin-left: 18%;
+        margin-top: -12%;
+    }
+
+    .link-button {
+        margin-left: 2%;
+    }
+
+    .button-margin {
+        margin-top: 8%;
+    }
+
+    .foto-kalimat-pembuka {
+        height: 200px; 
+        width: 200px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: 10%; 
+        margin-top: 3%;
+    }
+
+    .kalimat-pembuka {
+        height: 200px; 
+        width: 600px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: 10%; 
+        margin-left: 30%; 
+        margin-top: -17%; 
+        padding: 20px;
+    }
+
+    .box-artikel-jurnal {
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        padding: 20px;
+        padding: 20px; 
+        height: 650px;
+    }
+    .box-artikel {
+        height: 400px; 
+        width: 65%; 
+        background-color: darkgray;
+        margin-top: 10px;
+        padding: 20px; 
+        margin-left: 3%;
+    }
+    .frame-class {
+        width: 70%;
+        height: 400px;
+        margin-left: 32%;
+        margin-top: 42%;
+    }   
+
+    .footer {
+        height: 150px;
+        width: 100%;
+        background-color: black;
+        color: #fff;
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer h2 {
+        text-align: center;
+    }
+
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    
+    .fakeImg {
+        height: 200px; 
+        width: 200px; 
+        background-color: lightgray;
+        margin-top: 10px; 
+        border-radius: 50%;
+        margin-left: 0%;
+    }
+
+    .tulisan-sekolah {
+        margin-left: 32%;
+        margin-top: -24%;
+    }
+
+    .link-button {
+        margin-left: 2%;
+    }
+
+    .button-margin {
+        margin-top: 12%;
+    }
+
+    .foto-kalimat-pembuka {
+        height: 200px; 
+        width: 200px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: -2%; 
+        margin-top: 3%;
+    }
+
+    .kalimat-pembuka {
+        height: 200px; 
+        width: 400px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: 10%; 
+        margin-left: 32%; 
+        margin-top: -31.9%; 
+        padding: 20px;
+    }
+
+    .box-artikel-jurnal {
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        padding: 20px;
+        padding: 20px; 
+        height: 650px;
+    }
+    .box-artikel {
+        height: 400px; 
+        width: 65%; 
+        background-color: darkgray;
+        margin-top: 10px;
+        padding: 20px; 
+        margin-left: 3%;
+    }
+
+
+    .frame-class {
+        width: 70%;
+        height: 400px;
+        margin-top: -60px;
+        margin-left: 100px;
+    }
+    
+
+    .footer {
+        height: 150px;
+        width: 100%;
+        background-color: black;
+        color: #fff;
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer h2 {
+        text-align: center;
+    }
+
+}
+
+/* HP */
+@media only screen and (max-width: 767px){
+
+   .fakeImg {
+        height: 200px; 
+        width: 200px; 
+        background-color: lightgray;
+        margin-top: 10px; 
+        border-radius: 50%;
+        margin-left: 23%;
+    }
+    .tulisan-sekolah {
+        margin-top: 20px;
+        text-align: center;
+    } 
+
+    .link-button {
+        margin-left: 2%;
+    }
+
+    .foto-kalimat-pembuka {
+        height: 200px; 
+        width: 200px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: 10%; 
+        margin-top: 3%;
+    }
+
+    .button-margin {
+        margin-top: 8%;
+    }
+
+    .kalimat-pembuka {
+        height: 200px; 
+        width: 300px; 
+        background-color: darkgray;
+        margin-top: 10px; 
+        margin-left: 10%; 
+        margin-left: 0%; 
+        margin-top: 5%; 
+        padding: 20px;
+    }
+
+    .box-artikel-jurnal {
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        padding: 20px;
+        padding: 20px; 
+    }
+
+    .box-artikel {
+        height: 200px; 
+        width: 50%; 
+        background-color: darkgray;
+        margin-top: 10px;
+        padding: 20px; 
+        margin-left: 3%;
+    }
+
+
+    .footer {
+        height: 100px;
+        width: 100%;
+        background-color: black;
+        color: #fff;
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer h2 {
+        text-align: center;
+    }
+
+    .footer-font {
+        font-size: medium; 
+    }
+
+    .frame-class {
+        width: 100%;
+        height: 195px;
+    }
+
+}
+
