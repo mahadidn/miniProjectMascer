@@ -1,0 +1,77 @@
+/* laptop */
+
+@media only screen and (min-width: 291px) and (max-width: 800px){
+
+    .frame-gambar {
+        height: 100px;
+        width: 100px;
+        background-color: darkgray;
+        margin-left: 35px;
+    }
+
+    h5 {
+        font-size: 15px;
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 15%;
+        width: 120%;
+    }
+
+    p {
+        margin-top: 15%;
+    }
+
+    .tgl {
+        margin-top: -20px;
+    }
+    
+    .link-gambar {
+        text-decoration: none;
+        color: black;
+        text-underline-offset: unset;
+
+    }
+
+    
+
+}
+
+
+
+/* HP */
+@media only screen and (max-width: 290px){
+
+    .frame-gambar {
+        height: 100px;
+        width: 100px;
+        background-color: darkgray;
+        margin-left: 35px;
+    }
+
+    h5 {
+        font-size: 15px;
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 15%;
+        width: 120%;
+    }
+
+    p {
+        margin-top: 15%;
+    }
+
+    .tgl {
+        margin-top: -20px;
+    }
+    
+    .link-gambar {
+        text-decoration: none;
+        color: black;
+        text-underline-offset: unset;
+
+    }
+
+    
+
+}
+
