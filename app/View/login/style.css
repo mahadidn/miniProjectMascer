@@ -39,7 +39,19 @@
         margin-top: 5%;
         margin-left: 45%;
     }
+
+    .footer-login {
+        margin-left: -24%;
+        width: 200%;
+    }
     
+    .responsive-tablet {
+        margin-top: 5%; 
+        margin-bottom: -10%;
+        width: 80%;
+        margin-left: 12%;
+    }
+
 }
 
 /* tablet */
@@ -75,6 +87,10 @@
         margin-top: 2%;
     }
 
+    .responsive-tablet {
+        margin-top: 10%; margin-bottom: -20%;
+    }
+
 }
 
 /* tablet 2 */
@@ -108,6 +124,10 @@
 
     .ipad-air-logo {
         margin-top: 2%;
+    }
+
+    .responsive-tablet {
+        margin-top: 10%; margin-bottom: -20%;
     }
 
 }
