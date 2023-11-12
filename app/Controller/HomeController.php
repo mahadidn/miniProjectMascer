@@ -69,27 +69,9 @@ class HomeController {
         try {
             $response = $this->loginService->login($request);
             if($response->mode == "guru"){
-                $css = __DIR__ . '/../View/Guru/style.css';
-                View::render('Guru/index', [
-                'title' => 'Login',
-                'css' => $css,
-                'data' => [
-                    'name' => $response->name,
-                    'email' => $response->email,
-                    'nip' => $response->nip,
-                    'jenisKelamin' => $response->jenisKelamin,
-                    'tanggalLahir' => $response->tglLahir,
-                    'jabatan' => $response->jabatan
-                ]
-            ]);
+                View::redirect('/');
             }else {
-                $css = __DIR__ . '/../View/Admin/style.css';
-                View::render('Admin/index', [
-                    'title' => 'Login',
-                    'css' => $css,
-                    'name' => $response->name,
-                    'username' => $response->username
-                ]);
+                View::redirect('/');
             }
         }catch(Exception $exception){
             $css = __DIR__ . '/../View/login/style.css';

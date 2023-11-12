@@ -3,7 +3,7 @@
 namespace Mdn\MiniProjectSekolah\Model\Domain;
 
 class Guru {
-
+    public string $userType = "guru";
     public ?string $mode = "guru";
     public ?string $nip = null;
     public ?string $username = null;
