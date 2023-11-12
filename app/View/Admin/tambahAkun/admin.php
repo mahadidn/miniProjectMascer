@@ -1,3 +1,5 @@
+
+
 <div class="container ipad-air-logo">
     <!-- foto -->
     <div>
@@ -13,10 +15,10 @@
     <!-- halaman guru -->
     <div class="container" style="margin-top: 10%;background-color: #0093E9;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);padding: 20px; border-radius: 5px;">
         
-        <a href="#">
-            <img src="/imgGuru/home.png" alt="home" width="30px"> <b style="text-decoration: none; color: black;">Halaman Guru</b>
+        <a href="/">
+            <img src="/imgGuru/home.png" alt="home" width="30px"> <b style="text-decoration: none; color: black;">Tambah Akun </b>
         </a>
-        <a href="#">
+        <a href="/admin/logout">
             <b class="text-decoration-none text-black float-end">Logout</b>
         </a>
     </div>
@@ -24,7 +26,7 @@
 
         <div class="container" style="background-color: aliceblue; padding: 20px;box-shadow: 2px 2px 2px gray;">
             <div class="container-fluid bg-dark text-white mb-3" style="padding: 10px; border-radius: 10px;">
-                <b>Edit Profil </b>
+                <b>Tambah Akun Admin </b>
             </div>
 
 
@@ -36,7 +38,7 @@
                             Username
                         </td>
                         <td>
-                            <input type="email" class="rounded-2" id="exampleInputEmail1" placeholder="contoh: nama@gmail.com" aria-describedby="emailHelp">
+                            <input type="email" name="emailAdmin" class="rounded-2" id="exampleInputEmail1" placeholder="contoh: nama@gmail.com" aria-describedby="emailHelp">
                         </td>
                     </tr>
                     
@@ -45,7 +47,23 @@
                             Nama
                         </td>
                         <td>
-                            <input type="nip" placeholder="Masukkan NIP" class="rounded-2" id="exampleInputNip">
+                            <input type="nip" name="nameAdmin" placeholder="Masukkan Nama" class="rounded-2" id="exampleInputNip">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            <input type="password" name="passwordAdmin" placeholder="Masukkan Password" class="rounded-2" id="exampleInputNip">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ulangi Password
+                        </td>
+                        <td>
+                            <input type="password" name="passwordAdmin2" placeholder="Ulangi Password" class="rounded-2" id="exampleInputNip">
                         </td>
                     </tr>
                     <tr>
@@ -53,7 +71,7 @@
 
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-outline-primary">Konfirmasi</button>
+                            <button type="submit" name="" class="btn btn-outline-primary">Konfirmasi</button>
                         </td>
                     </tr>
                 </form>

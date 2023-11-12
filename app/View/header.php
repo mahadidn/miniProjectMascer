@@ -20,17 +20,33 @@
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container-lg">
         <a class="navbar-brand" href="/">SDN 005 Bukit Bestari</a>
+        <?php if($model['fitur']['login'] == true){  ?>
+        <a class="navbar-brand" href="/">Profil Saya</a>
+        <?php } ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
                 </li>
+                <?php if($model['fitur']['login'] != true){  ?>
                 <li class="nav-item">
                     <a class="nav-link active" href="/user/login">Login</a>
                 </li>
+                <?php } ?>
+                <?php if($model['fitur']['tambahAkun']){ ?>
+            <li class="nav-item dropdown link-sosmed" style="margin-left: -10px;">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tambah Akun
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/admin/tambah/guru">Akun Guru</a></li>
+                    <li><a class="dropdown-item" href="/admin/tambah/admin">Akun Admin</a></li>
+                </ul>
+            </li>
+            <?php } ?>
             <li class="nav-item dropdown link-sosmed">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sosial Media

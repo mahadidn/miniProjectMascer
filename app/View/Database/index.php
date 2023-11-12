@@ -12,7 +12,7 @@
 
     <!-- button -->
     <div class="button-margin">
-        <a class="btn btn-outline-primary" href="/" role="button">Home</a>
+        <a class="btn btn-outline-primary" href="./home" role="button">Home</a>
         <a class="btn btn-outline-primary link-button" href="./profil" role="button">Profil</a>
         <a class="btn btn-outline-primary link-button" href="./informasi" role="button">Informasi</a>
         <a class="btn btn-outline-primary link-button" href="./database" role="button">Database</a>

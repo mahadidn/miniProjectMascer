@@ -8,81 +8,228 @@ use Mdn\MiniProjectSekolah\Model\Database;
 use Mdn\MiniProjectSekolah\Model\Domain\Guru;
 use Mdn\MiniProjectSekolah\Model\Login\LoginRequest;
 use Mdn\MiniProjectSekolah\Repository\LoginRepository;
+use Mdn\MiniProjectSekolah\Repository\SessionRepository;
 use Mdn\MiniProjectSekolah\Service\LoginService;
+use Mdn\MiniProjectSekolah\Service\SessionService;
 
 class HomeController {
-    private LoginService $loginService;
+    private SessionService $sessionService;
 
     public function __construct(){
         $connection = Database::getConnection();
-        $loginRepository = new LoginRepository($connection);
-        $this->loginService = new LoginService($loginRepository);
+        $sessionRepository = new SessionRepository($connection);   
+        $loginRepository = new LoginRepository($connection);    
+        $this->sessionService = new SessionService($sessionRepository, $loginRepository);
     }
     
     public function index(){
-        $css = __DIR__ . '/../View/style.css';
-        View::render('index', [
-            'title' => 'Home',
-            'css' => $css
-        ]);
-
-    }
-
-    public function profil(){
-        $css = __DIR__ . '/../View/Profil/style.css';
-        View::render('Profil/index', [
-            'title' => 'Profil Sekolah',
-            'css' => $css
-        ]);
-    }
-
-    public function informasi(){
-        $css = __DIR__ . '/../View/Informasi/style.css';
-        View::render('Informasi/index', [
-            'title' => 'Informasi',
-            'css' => $css
-        ]);
-    }
-
-    public function database(){
-        $css = __DIR__ . '/../View/Database/style.css';
-        View::render('Database/index', [
-            'title' => 'Database',
-            'css' => $css,
-            'img' => '/imgDatabase/'
-        ]);
-    }
-
-    public function login(){
-        $css = __DIR__ . '/../View/login/style.css';
-        View::render('login/index', [
-            'title' => 'Login',
-            'css' => $css
-        ]);
-    }
-
-    public function postLogin(){
-        $request = new LoginRequest();
-        $request->username = $_POST['username'];
-        $request->password = $_POST['password'];
-
-        try {
-            $response = $this->loginService->login($request);
-            if($response->mode == "guru"){
-                View::redirect('/');
-            }else {
-                View::redirect('/');
-            }
-        }catch(Exception $exception){
-            $css = __DIR__ . '/../View/login/style.css';
-            View::render('login/index', [
-                'title' => 'Login',
+        $user = $this->sessionService->current();
+        if($user == null){
+            View::redirect('/home');
+        }else if ($user->userType == "guru"){
+            $css = __DIR__ . '/../View/Guru/style.css';
+            View::render('Guru/index', [
+                'title' => 'Profil Guru',
                 'css' => $css,
-                'error' => $exception->getMessage()
+                'data' => [
+                    'nip' => $user->nip,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
+                    'tanggalLahir' => $user->tglLahir,
+                    'jk' => $user->jenisKelamin,
+                    'fotoProfil' => $user->fotoProfil
+                ],
+                'fitur' => [
+                    'login' => true
+                ]
+            ]);
+        }else if ($user->userType == "admin"){
+            $css = __DIR__ . '/../View/Admin/style.css';
+            View::render('Admin/index', [
+                'title' => 'Profil Admin',
+                'css' => $css,
+                'username' => $user->username,
+                'name' => $user->name,
+                'fitur' => [
+                    'tambahAkun' => true,
+                    'login' => true
+                ]
             ]);
         }
     }
 
+    public function home(){
+        $user = $this->sessionService->current();
+        if($user == null){
+            $css = __DIR__ . '/../View/style.css';
+            View::render('index', [
+                'title' => 'home',
+                'css' => $css
+            ]);
+        }else if ($user->userType == "guru"){
+            $css = __DIR__ . '/../View/style.css';
+            View::render('index', [
+                'title' => 'home',
+                'css' => $css,
+                'data' => [
+                    'nip' => $user->nip,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
+                    'tanggalLahir' => $user->tglLahir,
+                    'jk' => $user->jenisKelamin,
+                    'fotoProfil' => $user->fotoProfil
+                ],
+                'fitur' => [
+                    'login' => true
+                ]
+            ]);
+        }else if ($user->userType == "admin"){
+            $css = __DIR__ . '/../View/style.css';
+            View::render('index', [
+                'title' => 'home',
+                'css' => $css,
+                'username' => $user->username,
+                'name' => $user->name,
+                'fitur' => [
+                    'tambahAkun' => true,
+                    'login' => true
+                ]
+            ]);
+        }
+    }
+
+    public function profil(){
+        $user = $this->sessionService->current();
+        if($user == null){
+            $css = __DIR__ . '/../View/Profil/style.css';
+            View::render('Profil/index', [
+                'title' => 'Profil Sekolah',
+                'css' => $css
+            ]);
+        }else if ($user->userType == "guru"){
+            $css = __DIR__ . '/../View/Profil/style.css';
+            View::render('Profil/index', [
+                'title' => 'Profil Sekolah',
+                'css' => $css,
+                'data' => [
+                    'nip' => $user->nip,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
+                    'tanggalLahir' => $user->tglLahir,
+                    'jk' => $user->jenisKelamin,
+                    'fotoProfil' => $user->fotoProfil
+                ],
+                'fitur' => [
+                    'login' => true
+                ]
+            ]);
+        }else if ($user->userType == "admin"){
+            $css = __DIR__ . '/../View/Profil/style.css';
+            View::render('Profil/index', [
+                'title' => 'Profil Sekolah',
+                'css' => $css,
+                'username' => $user->username,
+                'name' => $user->name,
+                'fitur' => [
+                    'tambahAkun' => true,
+                    'login' => true
+                ]
+            ]);
+        }
+    }
+
+    public function informasi(){
+        $user = $this->sessionService->current();
+        if($user == null){
+            $css = __DIR__ . '/../View/Informasi/style.css';
+            View::render('Informasi/index', [
+                'title' => 'Informasi',
+                'css' => $css
+            ]);
+        }else if ($user->userType == "guru"){
+            $css = __DIR__ . '/../View/Informasi/style.css';
+            View::render('Informasi/index', [
+                'title' => 'Informasi',
+                'css' => $css,
+                'data' => [
+                    'nip' => $user->nip,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
+                    'tanggalLahir' => $user->tglLahir,
+                    'jk' => $user->jenisKelamin,
+                    'fotoProfil' => $user->fotoProfil
+                ],
+                'fitur' => [
+                    'login' => true
+                ]
+            ]);
+        }else if ($user->userType == "admin"){
+            $css = __DIR__ . '/../View/Informasi/style.css';
+            View::render('Informasi/index', [
+                'title' => 'Informasi',
+                'css' => $css,
+                'username' => $user->username,
+                'name' => $user->name,
+                'fitur' => [
+                    'tambahAkun' => true,
+                    'login' => true
+                ]
+            ]);
+        }
+    }
+
+    public function database(){
+        $user = $this->sessionService->current();
+        if($user == null){
+            $css = __DIR__ . '/../View/Database/style.css';
+            View::render('Database/index', [
+                'title' => 'Data Guru & Pendidik',
+                'css' => $css,
+                'img' => '/imgDatabase/'
+            ]);
+        }else if ($user->userType == "guru"){
+            $css = __DIR__ . '/../View/Database/style.css';
+            View::render('Database/index', [
+                'title' => 'Data Guru & Pendidik',
+                'css' => $css,
+                'img' => '/imgDatabase/',
+                'data' => [
+                    'nip' => $user->nip,
+                    'username' => $user->username,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
+                    'tanggalLahir' => $user->tglLahir,
+                    'jk' => $user->jenisKelamin,
+                    'fotoProfil' => $user->fotoProfil
+                ],
+                'fitur' => [
+                    'login' => true
+                ]
+            ]);
+        }else if ($user->userType == "admin"){
+            $css = __DIR__ . '/../View/Database/style.css';
+            View::render('Database/index', [
+                'title' => 'Data Guru & Pendidik',
+                'css' => $css,
+                'username' => $user->username,
+                'name' => $user->name,
+                'img' => '/imgDatabase/',
+                'fitur' => [
+                    'tambahAkun' => true,
+                    'login' => true
+                ]
+            ]);
+        }
+    }
 
 }
 

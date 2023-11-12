@@ -5,16 +5,23 @@ namespace Mdn\MiniProjectSekolah\Controller;
 use Mdn\MiniProjectSekolah\App\View;
 use Mdn\MiniProjectSekolah\Model\Database;
 use Mdn\MiniProjectSekolah\Repository\AdminRepository;
+use Mdn\MiniProjectSekolah\Repository\LoginRepository;
+use Mdn\MiniProjectSekolah\Repository\SessionRepository;
 use Mdn\MiniProjectSekolah\Service\AdminService;
+use Mdn\MiniProjectSekolah\Service\LoginService;
+use Mdn\MiniProjectSekolah\Service\SessionService;
 
 class GuruController {
 
-    private AdminService $adminService;
+    private SessionService $sessionService;
+    private LoginService $loginService;
 
     public function __construct(){
         $connection = Database::getConnection();
-        $adminRepository = new AdminRepository($connection);
-        $this->adminService = new AdminService($adminRepository);
+        $loginRepository = new LoginRepository($connection);
+        $this->loginService = new LoginService($loginRepository);
+        $sessionRepository = new SessionRepository($connection);
+        $this->sessionService = new SessionService($sessionRepository, $loginRepository);
     }
 
     public function profil(){
@@ -31,6 +38,11 @@ class GuruController {
             'title' => 'Edit Profil Guru',
             'css' => $css
         ]);
+    }
+
+    public function logout(){
+        $this->sessionService->destroy();
+        View::redirect("/");
     }
 
 }

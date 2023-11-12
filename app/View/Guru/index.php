@@ -18,7 +18,7 @@
         <a href="#">
             <img src="/imgGuru/home.png" alt="home" width="30px"> <b style="text-decoration: none; color: black;">Halaman Guru</b>
         </a>
-        <a href="#">
+        <a href="/guru/logout">
             <b class="text-decoration-none text-black float-end">Logout</b>
         </a>
     </div>
@@ -64,12 +64,12 @@
                         Jenis Kelamin 
                     </td>
                     <td>
-                        <input class="rounded-1 mb-3" type="text" value="<?=  $model['data']['jenisKelamin'] ?>" aria-label="Disabled input example" disabled readonly>
+                        <input class="rounded-1 mb-3" type="text" value="<?=  $model['data']['jk'] ?>" aria-label="Disabled input example" disabled readonly>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Tempat Tanggal Lahir  
+                        Tanggal Lahir  
                     </td>
                     <td>
                         <input class="rounded-1 mb-3" type="text" value="<?=  $model['data']['tanggalLahir'] ?>" aria-label="Disabled input example" disabled readonly>

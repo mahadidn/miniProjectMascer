@@ -18,7 +18,7 @@
         <a href="#">
             <img src="/imgGuru/home.png" alt="home" width="30px"> <b style="text-decoration: none; color: black;">Halaman Admin</b>
         </a>
-        <a href="#">
+        <a href="/admin/logout">
             <b class="text-decoration-none text-black float-end">Logout</b>
         </a>
     </div>
@@ -36,7 +36,7 @@
                         Username
                     </td>
                     <td>
-                        <input class="rounded-1 mb-3" type="text" value="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+                        <input class="rounded-1 mb-3" type="text" value="<?= $model['username'] ?>" aria-label="Disabled input example" disabled readonly>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                         Name 
                     </td>
                     <td>
-                        <input class="rounded-1 mb-3" type="text" value="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+                        <input class="rounded-1 mb-3" type="text" value="<?= $model['name'] ?>" aria-label="Disabled input example" disabled readonly>
                     </td>
                 </tr>                
             </table>
