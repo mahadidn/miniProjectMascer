@@ -29,7 +29,6 @@ class AdminRepository {
                 $guru = new Guru();
                 $guru->username = $row['username'];
                 $guru->password = $row['password'];
-                $guru->guru = "guru";
                 return $guru;
             }else {
                 return null;

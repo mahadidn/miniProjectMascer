@@ -24,13 +24,13 @@ class AdminServiceTest extends TestCase {
     public function testRegisterGuru(){
         $request =  new GuruRegisterRequest();
         $request->nip = "2342342";
-        $request->username = "yotsuba";
-        $request->name = "Nakano Yotsuba";
-        $request->email = "yotsuba@gmail.com";
-        $request->password = "Rahasia123";
-        $request->jabatan = "Guru MTK";
+        $request->username = "mahadi";
+        $request->name = "Mahadi Dwi Nugraha";
+        $request->email = "mahadi@gmail.com";
+        $request->password = "mahadi4567";
+        $request->jabatan = "Guru";
         $request->tglLahir = "2003-03-12";
-        $request->jenisKelamin = "perempuan";
+        $request->jenisKelamin = "Laki-laki";
         $request->fotoProfil = "afadsfa";
 
         $response = $this->adminService->registerGuru($request);
@@ -90,9 +90,9 @@ class AdminServiceTest extends TestCase {
 
     public function testRegisterAdmin(){
         $request =  new AdminRegisterRequest();
-        $request->username = "adminGanteng";
-        $request->name = "Mahadi";
-        $request->password = "mdn123";
+        $request->username = "admin";
+        $request->name = "admingg";
+        $request->password = "admin123";
 
         $response = $this->adminService->registerAdmin($request);
 
